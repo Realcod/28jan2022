@@ -1,0 +1,44 @@
+/*
+Write a program such that you are given an integer ‘N’ and print the pattern consisting of ‘N’ lines.
+For Example :
+If we are given N=3
+The pattern is :
+1 2 3 10 11 12
+4 5 8 9
+6 7
+*/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	int n;
+	cout<<"Enter n";
+	cin>>n;
+	
+	int i=1,col=2,val=n,x1=n*(n + 1),ctr=n;
+	while(i<=n){
+		int j=1;
+		col=col-1;
+		while(j<=val){
+			cout<<col;
+			col++;
+			j++;
+		}
+		
+		j=1;
+		int x3=x1-ctr+1;
+		while(j<=val){
+            cout<<x3;
+			x3++;
+			j++;
+			
+		}
+		cout<<endl;
+		i++;
+		val--;
+		col++;
+		x1-=ctr;
+		ctr--;
+	}
+}
